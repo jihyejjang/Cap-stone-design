@@ -29,14 +29,15 @@ extracted feature로 비정상/정상 상황에 대한 0~1사이 sigmoid output�
 ### Deep MIL(Multiple instance learning)
 
 **loss formulation**
-1. Ranking loss
- TP score, FP score의 차이를 키우는 loss (Positive : 비정상 상황일수록 값이 1에 가까워야 함)
- <img width="488" src="https://user-images.githubusercontent.com/61912635/191239787-34aa058a-42e3-4085-a930-b52a5f4c48f9.png">
-2. (1) temporal loss : clip i, i+1 간의 score 차이가 부드럽게 이어지도록 만들어주는 loss
+1. Ranking loss (l)
+ TP score, FP score의 차이를 키우는 loss (Positive : 비정상 상황일수록 값이 1에 가까워야 함)  
+2. (1) temporal loss : clip i, i+1 간의 score 차이가 부드럽게 이어지도록 만들어주는 loss  
     (2) sparse loss : video bag에서 비정상 상황은 아주 짧은 순간이기 때문에, 나머지 순간은 0이 되도록(sparse) 만들어주는 loss
-    <img width = "380" src = "https://user-images.githubusercontent.com/61912635/191239791-1528ef67-146a-4d72-bc00-8055f2efdda1.png">
+ <img width="488" src="https://user-images.githubusercontent.com/61912635/191239787-34aa058a-42e3-4085-a930-b52a5f4c48f9.png">
 
-Total loss는 1,2의 합으로 구성
+Total loss는 1,2의 합으로 구성  
+<img width = "380" src = "https://user-images.githubusercontent.com/61912635/191239791-1528ef67-146a-4d72-bc00-8055f2efdda1.png">
+
 
 ### Visualization
 
